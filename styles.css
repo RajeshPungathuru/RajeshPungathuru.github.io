@@ -1909,3 +1909,562 @@ textarea {
     font-size: 1rem;
   }
 }
+/*newcode*/
+
+
+
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  /* Adjust navbar for mobile */
+  .navbar {
+    padding: 1rem;
+  }
+
+  .nav-links {
+    display: none; /* Hide nav links on mobile */
+  }
+
+  .nav-social {
+    display: none; /* Hide social icons on mobile */
+  }
+
+  /* Adjust hero section for mobile */
+  .hero-section {
+    padding: 6rem 1rem;
+  }
+
+  .hero-content {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .hero-text {
+    padding-left: 0;
+  }
+
+  .dev-name {
+    font-size: 2.5rem;
+  }
+
+  .role-text {
+    font-size: 2rem;
+  }
+
+  .hero-image {
+    width: 300px;
+    height: 300px;
+  }
+
+  /* Adjust about section for mobile */
+  .about-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-image {
+    margin-bottom: 2rem;
+  }
+
+  /* Adjust skills section for mobile */
+  .skills-categories {
+    grid-template-columns: 1fr;
+  }
+
+  /* Adjust experience section for mobile */
+  .experience-container {
+    grid-template-columns: 1fr;
+  }
+
+  .experience-card {
+    padding: 1.5rem;
+  }
+
+  .meta-info {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  /* Adjust projects section for mobile */
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Adjust contact section for mobile */
+  .contact-container {
+    grid-template-columns: 1fr;
+  }
+
+  .form-group {
+    grid-template-columns: 1fr;
+  }
+
+  /* Adjust certifications section for mobile */
+  .certifications-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .certification-image {
+    height: 300px;
+    padding: 2.5rem;
+  }
+
+  /* Adjust footer for mobile */
+  .footer-content {
+    text-align: center;
+  }
+
+  .footer-social {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Adjust hero section for very small screens */
+  .hero-section {
+    padding: 4rem 1rem;
+  }
+
+  .dev-name {
+    font-size: 2rem;
+  }
+
+  .role-text {
+    font-size: 1.5rem;
+  }
+
+  .hero-image {
+    width: 250px;
+    height: 250px;
+  }
+
+  /* Adjust about section for very small screens */
+  .about-image {
+    width: 100%;
+    max-width: 250px;
+  }
+
+  /* Adjust skills section for very small screens */
+  .skill-category {
+    padding: 1.5rem;
+  }
+
+  .skill-tags span {
+    padding: 0.5rem 1rem;
+  }
+
+  /* Adjust experience section for very small screens */
+  .experience-card {
+    padding: 1rem;
+  }
+
+  /* Adjust contact section for very small screens */
+  .contact-form {
+    padding: 20px;
+  }
+
+  /* Adjust certifications section for very small screens */
+  .certification-image {
+    height: 250px;
+    padding: 2rem;
+  }
+}
+
+/* Add transitions for smooth resizing */
+.navbar, .hero-content, .about-content, .skills-categories, .experience-container, .project-grid, .contact-container, .certifications-grid {
+  transition: all 0.3s ease;
+}
+
+/* Mobile Menu Toggle */
+.mobile-menu-toggle {
+  display: none; /* Hide by default */
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 25px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001;
+}
+
+.mobile-menu-toggle span {
+  width: 100%;
+  height: 3px;
+  background: #f8fafc;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .mobile-menu-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background: rgba(11, 17, 33, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 1rem;
+    display: none;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+}
+/* Certifications Section */
+.certifications-section {
+  padding: 8rem 5%;
+  background: var(--dark-gradient);
+  overflow: hidden; /* Prevent overflow */
+}
+
+.certifications-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjust min width */
+  gap: 2rem;
+  margin-top: 4rem;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.certification-card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInUp 0.5s ease-out backwards;
+  max-width: 100%; /* Ensure it doesn't overflow */
+  margin: 0 auto;
+}
+
+.certification-image {
+  width: 100%;
+  height: auto; /* Adjust height */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e2e8f0;
+  padding: 2rem; /* Adjust padding */
+}
+
+.certification-image img {
+  width: 100%;
+  height: auto; /* Ensure image is responsive */
+  object-fit: contain;
+  animation: float 6s ease-in-out infinite;
+}
+
+.certification-content {
+  padding: 1.5rem; /* Adjust padding */
+}
+
+.certification-content h3 {
+  color: var(--dark-color);
+  font-size: 1.2rem; /* Adjust font size */
+  margin-bottom: 0.8rem;
+}
+
+.certification-content p {
+  color: #64748b;
+  font-size: 0.9rem; /* Adjust font size */
+  margin-bottom: 1rem;
+}
+
+.certification-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Ensure links wrap on small screens */
+}
+
+.cert-btn {
+  background: var(--gradient);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: transform 0.3s ease;
+  margin-bottom: 0.5rem; /* Add margin for wrapped items */
+}
+
+.cert-date {
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .certifications-grid {
+    grid-template-columns: 1fr;
+    padding: 0 1.5rem;
+    gap: 2rem;
+  }
+
+  .certification-image {
+    height: auto;
+    padding: 1.5rem;
+  }
+
+  .certification-content {
+    padding: 1rem;
+  }
+
+  .certification-content h3 {
+    font-size: 1.1rem;
+  }
+
+  .certification-content p {
+    font-size: 0.85rem;
+  }
+
+  .cert-btn {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .cert-date {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .certifications-section {
+    padding: 4rem 1rem;
+  }
+
+  .certification-image {
+    padding: 1rem;
+  }
+
+  .certification-content h3 {
+    font-size: 1rem;
+  }
+
+  .certification-content p {
+    font-size: 0.8rem;
+  }
+
+  .cert-btn {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.7rem;
+  }
+
+  .cert-date {
+    font-size: 0.75rem;
+  }
+}
+/* Prevent overflow */
+html, body {
+  width: 100%;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Ensure all sections are contained */
+section {
+  width: 100%;
+  overflow: hidden;
+}
+/* Hero Section */
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 0 5%;
+  background: var(--dark-gradient);
+  position: relative;
+  overflow: hidden;
+  color: #f8fafc;
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 6rem 1rem;
+  }
+
+  .hero-content {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .hero-text {
+    padding-left: 0;
+  }
+
+  .dev-name {
+    font-size: 2.5rem;
+  }
+
+  .role-text {
+    font-size: 2rem;
+  }
+
+  .hero-image {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    padding: 4rem 1rem;
+  }
+
+  .dev-name {
+    font-size: 2rem;
+  }
+
+  .role-text {
+    font-size: 1.5rem;
+  }
+
+  .hero-image {
+    width: 250px;
+    height: 250px;
+  }
+}
+/* Mobile Responsive Menu */
+.navbar {
+  position: relative;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.nav-links a {
+  display: inline-block;
+}
+
+.hamburger-menu {
+  display: none;
+  cursor: pointer;
+  font-size: 24px;
+  color: #fff;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: row;
+}
+
+/* When on small screens */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    background-color: #333;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    padding: 10px 0;
+  }
+  
+  .nav-links.active {
+    display: block;
+  }
+
+  .nav-links a {
+    padding: 10px 0;
+    text-align: center;
+    border-bottom: 1px solid #444;
+  }
+
+  .hamburger-menu {
+    display: block;
+  }
+}
+
+/* Mobile menu styles */
+.navbar .nav-links {
+  display: none; /* Hide the menu by default */
+  flex-direction: column; /* Stack the items vertically */
+  align-items: center; /* Center the items */
+  background-color: #333; /* Dark background for the mobile menu */
+  position: absolute;
+  top: 60px; /* Adjust based on the height of your navbar */
+  left: 0;
+  width: 100%;
+  z-index: 999; /* Ensure the menu is on top */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Slight shadow for the mobile menu */
+  padding: 10px 0;
+}
+
+.navbar .nav-links.active {
+  display: flex; /* Show the menu when it's active */
+}
+
+.navbar .nav-item {
+  padding: 12px 20px;
+  color: #fff;
+  font-size: 18px;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.navbar .nav-item:hover {
+  background-color: #555; /* Darker background on hover */
+}
+
+.navbar .nav-item.active {
+  background-color: #4CAF50; /* Active state for the current section */
+}
+
+.navbar .nav-social {
+  display: none; /* Hide social icons in the mobile menu */
+}
+
+.navbar .menu-btn {
+  display: block; /* Ensure the hamburger menu button is visible on mobile */
+  background: transparent;
+  border: none;
+  font-size: 30px;
+  color: #fff;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.navbar .menu-btn i {
+  color: #fff;
+}
+
+@media (min-width: 768px) {
+  .navbar .nav-links {
+    display: flex; /* Show the regular menu on desktop */
+    flex-direction: row; /* Horizontal menu */
+    justify-content: flex-end;
+    position: static;
+    background: none;
+    padding: 0;
+  }
+
+  .navbar .menu-btn {
+    display: none; /* Hide the hamburger button on desktop */
+  }
+
+  .navbar .nav-social {
+    display: flex; /* Show social icons on desktop */
+    margin-left: 20px;
+  }
+}

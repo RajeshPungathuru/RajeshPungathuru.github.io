@@ -208,3 +208,11 @@ form.addEventListener('submit', function(e) {
       }, 3000);
   });
 });
+// Add this JavaScript to toggle the mobile menu
+document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
+  document.querySelector('.nav-links').classList.toggle('active');
+});
+document.getElementById('hamburger-menu').addEventListener('click', function() {
+  const navLinks = document.querySelector('.nav-links');
+  navLinks.classList.toggle('active');
+});
