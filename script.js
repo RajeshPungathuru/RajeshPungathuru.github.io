@@ -216,3 +216,10 @@ document.getElementById('hamburger-menu').addEventListener('click', function() {
   const navLinks = document.querySelector('.nav-links');
   navLinks.classList.toggle('active');
 });
+// JavaScript for mobile menu toggle
+const menuBtn = document.querySelector('.menu-btn');
+const navLinks = document.querySelector('.nav-links');
+
+menuBtn.addEventListener('click', () => {
+  navLinks.classList.toggle('active'); // Toggle the active class to show or hide the menu
+});
